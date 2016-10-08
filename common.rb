@@ -19,7 +19,8 @@ require './addons'
 require 'yaml'
 
 # Setup the Gemini path
-$GEMINI_PATH = 'D:\Programmi (x86)\Gemini'
+# $GEMINI_PATH = 'D:\Programmi (x86)\Gemini'
+$GEMINI_PATH = 'E:\Greel\Workspaces\AzuriteBackup\Gemini'
 
 # Setup the config file path
 os_version = `ver`.strip
