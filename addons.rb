@@ -6,11 +6,11 @@
 
 #-------------------------------------------------------------------------------------
 # This change to Hash is critical if we want to version YAML files.  By default, the
-# order of hash keys is not guaranteed.  This change modifies the Hash#encode_with method
+# order of hash keys is not guaranteed.  This change modifies the Hash#to_yaml method
 # to sort the hash based on key before emitting the YAML for it.
 #-------------------------------------------------------------------------------------
 class Hash
-  # Replacing the encode_with function so it'll serializes hashes sorted (by their keys)
+  # Replacing the to_yaml function so it'll serializes hashes sorted (by their keys)
   def to_yaml( opts = {} )
     YAML::quick_emit( object_id, opts ) do |out|
       out.map( taguri, to_yaml_style ) do |map|
